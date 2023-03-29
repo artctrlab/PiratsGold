@@ -27,9 +27,9 @@ class ThreeBlocksFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btStartStop.setOnClickListener {
-            if (binding.btStartStop.text == "Start") {
-                binding.btStartStop.text = "Stop"
+        binding.ivStart.setOnClickListener {
+            if (binding.tvStart.text == "Start") {
+                binding.tvStart.text = "Stop"
                 binding.ll100PointsLine.alpha = 1f
                 setEnabledForView()
                 binding.iv11.isEnabled = true
@@ -966,8 +966,8 @@ class ThreeBlocksFragment : Fragment() {
                     }
                 }
             }else{
-                if (binding.btStartStop.text == "Stop") {
-                    binding.btStartStop.text = "Start"
+                if (binding.tvStart.text == "Stop") {
+                    binding.tvStart.text = "Start"
                     setEnabledForView()
                     setImageResourceForView()
                     setVisibilityForView()

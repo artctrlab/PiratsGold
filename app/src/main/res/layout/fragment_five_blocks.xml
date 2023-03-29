@@ -5,7 +5,7 @@
     style="@style/points"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#5A7B80"
+    android:background="@drawable/krasivi"
     tools:context=".fragments.FourBlocksFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,7 +21,7 @@
             android:layout_marginBottom="16dp"
             android:text="Total score :"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -32,9 +32,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="16dp"
-            android:text="score :"
+            android:text="Score :"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/tvTotalScore"
             app:layout_constraintStart_toStartOf="parent" />
@@ -387,20 +387,31 @@
             app:layout_constraintStart_toEndOf="@+id/ll200000PointsLine"
             app:layout_constraintTop_toTopOf="@+id/ll200000PointsLine" />
 
-        <Button
-            android:id="@+id/btStartStop"
-            android:layout_width="130dp"
-            android:layout_height="170dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="64dp"
-            android:backgroundTint="#FB9804"
-            android:text="Start"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:cornerRadius="15dp"
+        <ImageView
+            android:id="@+id/ivStart3"
+            android:layout_width="160dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="4dp"
+            android:src="@drawable/klipartz"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.375" />
+
+        <TextView
+            android:id="@+id/tvStart3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            android:textColor="@color/white"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/ivStart3"
+            app:layout_constraintEnd_toEndOf="@+id/ivStart3"
+            app:layout_constraintHorizontal_bias="0.571"
+            app:layout_constraintStart_toStartOf="@+id/ivStart3"
+            app:layout_constraintTop_toTopOf="@+id/ivStart3"
+            app:layout_constraintVertical_bias="0.8" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

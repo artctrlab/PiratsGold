@@ -31,9 +31,9 @@ class FiveBlocksFragment : Fragment() {
         dataModel.messagetwo.observe(activity as LifecycleOwner) {
             totalCount = it.toInt()
         }
-        binding.btStartStop.setOnClickListener {
-            if (binding.btStartStop.text == "Start") {
-                binding.btStartStop.text = "Stop"
+        binding.ivStart3.setOnClickListener {
+            if (binding.tvStart3.text == "Start") {
+                binding.tvStart3.text = "Stop"
                 binding.ll100PointsLine.alpha = 1f
                 setEnabledForView()
                 binding.iv11.isEnabled = true
@@ -2290,8 +2290,8 @@ class FiveBlocksFragment : Fragment() {
                     }
                 }
             } else {
-                if (binding.btStartStop.text == "Stop") {
-                    binding.btStartStop.text = "Start"
+                if (binding.tvStart3.text == "Stop") {
+                    binding.tvStart3.text = "Start"
                     setEnabledForView()
                     setImageResourceForView()
                     setVisibilityForView()

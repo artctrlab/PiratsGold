@@ -34,9 +34,9 @@ class FourBlocksFragment : Fragment() {
             totalCount = it.toInt()
         }
 
-        binding.btStartStop.setOnClickListener {
-            if (binding.btStartStop.text == "Start") {
-                binding.btStartStop.text = "Stop"
+        binding.ivStart2.setOnClickListener {
+            if (binding.tvStart2.text == "Start") {
+                binding.tvStart2.text = "Stop"
                 binding.ll100PointsLine.alpha = 1f
                 setEnabledForView()
                 binding.iv11.isEnabled = true
@@ -1558,8 +1558,8 @@ class FourBlocksFragment : Fragment() {
                     }
                 }
             } else {
-                if (binding.btStartStop.text == "Stop") {
-                    binding.btStartStop.text = "Start"
+                if (binding.tvStart2.text == "Stop") {
+                    binding.tvStart2.text = "Start"
                     setEnabledForView()
                     setImageResourceForView()
                     setVisibilityForView()

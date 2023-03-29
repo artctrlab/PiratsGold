@@ -1,9 +1,9 @@
 package com.arabica.piratsgold
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.Window
+import androidx.appcompat.app.AppCompatActivity
 import com.arabica.piratsgold.databinding.ActivityMainBinding
 import com.arabica.piratsgold.fragments.SplashFragment
 
