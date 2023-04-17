@@ -413,6 +413,16 @@
             app:layout_constraintTop_toTopOf="@+id/ivStart3"
             app:layout_constraintVertical_bias="0.8" />
 
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            app:adSize="BANNER"
+            app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

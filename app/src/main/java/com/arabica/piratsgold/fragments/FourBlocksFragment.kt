@@ -12,6 +12,8 @@ import androidx.lifecycle.LifecycleOwner
 import com.arabica.piratsgold.DataModel
 import com.arabica.piratsgold.R
 import com.arabica.piratsgold.databinding.FragmentFourBlocksBinding
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 
 
 class FourBlocksFragment : Fragment() {
@@ -29,6 +31,8 @@ class FourBlocksFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        initAdMob4()
 
         dataModel.message.observe(activity as LifecycleOwner) {
             totalCount = it.toInt()
@@ -1574,6 +1578,26 @@ class FourBlocksFragment : Fragment() {
             activity?.getSharedPreferences("SHARED_PREFS", Context.MODE_PRIVATE)
         binding.tvTotalScore.text = sharedPreference?.getString("222", "Total score: $totalCount")
     }
+
+    private fun initAdMob4() {
+        MobileAds.initialize(requireContext())
+        val adRequest4 = AdRequest.Builder().build()
+        binding.adView4.loadAd(adRequest4)
+    }
+    override fun onResume() {
+        super.onResume()
+        binding.adView4.resume()
+    }
+    override fun onPause() {
+        super.onPause()
+        binding.adView4.pause()
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        binding.adView4.destroy()
+    }
+
+
     @SuppressLint("SuspiciousIndentation")
     private fun goToFiveBlocks() {
         dataModel.messagetwo.value = totalCount.toString()

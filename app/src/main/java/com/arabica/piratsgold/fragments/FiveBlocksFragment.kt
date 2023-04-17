@@ -11,6 +11,8 @@ import androidx.lifecycle.LifecycleOwner
 import com.arabica.piratsgold.DataModel
 import com.arabica.piratsgold.R
 import com.arabica.piratsgold.databinding.FragmentFiveBlocksBinding
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 
 class FiveBlocksFragment : Fragment() {
     private lateinit var binding : FragmentFiveBlocksBinding
@@ -27,6 +29,8 @@ class FiveBlocksFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        initAdMob5()
 
         dataModel.messagetwo.observe(activity as LifecycleOwner) {
             totalCount = it.toInt()
@@ -2306,6 +2310,26 @@ class FiveBlocksFragment : Fragment() {
             activity?.getSharedPreferences("SHARED_PREFS", Context.MODE_PRIVATE)
         binding.tvTotalScore.text = sharedPreference?.getString("222", "Total score: $totalCount")
     }
+
+    private fun initAdMob5() {
+        MobileAds.initialize(requireContext())
+        val adRequest5 = AdRequest.Builder().build()
+        binding.adView5.loadAd(adRequest5)
+    }
+    override fun onResume() {
+        super.onResume()
+        binding.adView5.resume()
+    }
+    override fun onPause() {
+        super.onPause()
+        binding.adView5.pause()
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        binding.adView5.destroy()
+    }
+
+
     private fun save() {
         val sharedPreference = activity?.getSharedPreferences("SHARED_PREFS", Context.MODE_PRIVATE)
         val editor = sharedPreference?.edit()

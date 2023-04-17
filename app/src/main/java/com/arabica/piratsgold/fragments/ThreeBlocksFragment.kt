@@ -1,5 +1,6 @@
 package com.arabica.piratsgold.fragments
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +11,8 @@ import androidx.fragment.app.activityViewModels
 import com.arabica.piratsgold.DataModel
 import com.arabica.piratsgold.R
 import com.arabica.piratsgold.databinding.FragmentThreeBlocksBinding
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 
 class ThreeBlocksFragment : Fragment() {
     private lateinit var binding: FragmentThreeBlocksBinding
@@ -26,6 +29,8 @@ class ThreeBlocksFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        initAdMob3()
 
         binding.ivStart.setOnClickListener {
             if (binding.tvStart.text == "Start") {
@@ -983,6 +988,27 @@ class ThreeBlocksFragment : Fragment() {
         binding.tvTotalScore.text =
             sharedPreference?.getString("222", "Total score: $totalCount")
     }
+
+    @SuppressLint("VisibleForTests")
+    private fun initAdMob3() {
+        MobileAds.initialize(requireContext())
+        val adRequest3 = AdRequest.Builder().build()
+        binding.adView3.loadAd(adRequest3)
+    }
+    override fun onResume() {
+        super.onResume()
+        binding.adView3.resume()
+    }
+    override fun onPause() {
+        super.onPause()
+        binding.adView3.pause()
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        binding.adView3.destroy()
+    }
+
+
     private fun goToFourBlocks() {
         dataModel.message.value = totalCount.toString()
         activity?.supportFragmentManager
